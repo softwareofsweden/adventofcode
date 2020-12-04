@@ -37,7 +37,7 @@ function validate($value, $field)
                 return intval($value) >= 150 && intval($value) <= 193;
             } elseif (strstr($value, "in")) {
                 // If in, the number must be at least 59 and at most 76.
-                return intval($value) >= 59 && intval($value) <= 79;
+                return intval($value) >= 59 && intval($value) <= 76;
             } else {
                 return false;
             }
