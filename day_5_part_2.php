@@ -14,9 +14,11 @@ foreach ($boardingPasses as $boardingPass) {
     $takenSeats[] = $row * 8 + $col;
 }
 
-for ($i = 8; $i < 126 * 8; $i++) {
-    if (!in_array($i, $takenSeats) && in_array($i - 1, $takenSeats) && in_array($i + 1, $takenSeats)) {
-        echo 'The answer is: ' . $i . "\n";
+sort($takenSeats);
+for ($i = 1; $i < count($takenSeats) - 1; $i++) {
+    if ($takenSeats[$i + 1] - $takenSeats[$i] == 2) {
+        echo 'The answer is: ' . strval($takenSeats[$i] + 1) . "\n";
         break;
     }
 }
+
