@@ -4,6 +4,11 @@ include_once "ProblemInterface.php";
 
 class Day2Part1 implements ProblemInterface
 {
+    public function expected()
+    {
+        return 506;
+    }
+
     public function solve()
     {
         //

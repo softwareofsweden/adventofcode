@@ -4,6 +4,10 @@ include_once "ProblemInterface.php";
 
 class Day7Part1 implements ProblemInterface
 {
+    public function expected()
+    {
+        return 261;
+    }
 
     public function bagHasBag($allBags, $bag, $find)
     {

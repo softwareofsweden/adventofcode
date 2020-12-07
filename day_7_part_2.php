@@ -4,8 +4,13 @@ include_once "ProblemInterface.php";
 
 class Day7Part2 implements ProblemInterface
 {
+    public function expected()
+    {
+        return 3765;
+    }
 
-    public function bagCount($allBags, $bag) {
+    public function bagCount($allBags, $bag)
+    {
         $count = 0;
         foreach ($bag as $innerBag => $c) {
             $count = $count + $c;

@@ -4,6 +4,11 @@ include_once "ProblemInterface.php";
 
 class Day4Part2 implements ProblemInterface
 {
+    public function expected()
+    {
+        return 224;
+    }
+
     function validateHcl($string)
     {
         for ($i = 0; $i < 6; $i++) {
