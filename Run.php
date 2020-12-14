@@ -17,6 +17,11 @@ echo "Task          Result                   Time (ms)                Valid\n";
 echo "---------------------------------------------------------------------\n";
 $startAll = microtime(true);
 foreach ($problems as $problem) {
+
+    if (get_class($problem) != 'Day15Part1') {
+        // continue;
+    }
+
     $start = microtime(true);
     $answer = $problem->solve();
     echo str_pad(get_class($problem) . ": ", 14) . str_pad($answer, 25);
