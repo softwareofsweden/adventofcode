@@ -18,8 +18,8 @@ echo "---------------------------------------------------------------------\n";
 $startAll = microtime(true);
 foreach ($problems as $problem) {
 
-    if (get_class($problem) != 'Day15Part1') {
-        // continue;
+    if (get_class($problem) != 'Day15Part2') {
+        //continue;
     }
 
     $start = microtime(true);
