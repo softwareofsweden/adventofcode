@@ -24,25 +24,6 @@ class Day11Part2 implements ProblemInterface
         $this->seatLayout[$y][$x] = $value;
     }
 
-    public function adjacentOccupiedCount($x1, $y1, $seatLayout)
-    {
-        $count = 0;
-        for ($y = -1; $y < 2; $y++) {
-            $ry = $y1 + $y;
-            if ($ry >= 0 && $ry < $this->h) {
-                for ($x = -1; $x < 2; $x++) {
-                    $rx = $x1 + $x;
-                    if ($rx >= 0 && $rx < $this->w && !($rx == $x1 && $ry == $y1)) {
-                        if ($this->getSeat($rx, $ry, $seatLayout) == '#') {
-                            $count++;
-                        }
-                    }
-                }
-            }
-        }
-        return $count;
-    }
-
     public function canSeeOccupied($x1, $y1, $dx, $dy, $seatLayout)
     {
         while (true) {
@@ -85,6 +66,39 @@ class Day11Part2 implements ProblemInterface
         return $count;
     }
 
+    public function moreThanFourVisibleOccupied($x1, $y1, $seatLayout)
+    {
+        $count = 0;
+        for ($dy = -1; $dy < 2; $dy++) {
+            for ($dx = -1; $dx < 2; $dx++) {
+                if (!($dx == 0 && $dy == 0)) {
+                    if ($this->canSeeOccupied($x1, $y1, $dx, $dy, $seatLayout)) {
+                        $count++;
+                        if ($count > 4) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public function noVisibleOccupied($x1, $y1, $seatLayout)
+    {
+        $count = 0;
+        for ($dy = -1; $dy < 2; $dy++) {
+            for ($dx = -1; $dx < 2; $dx++) {
+                if (!($dx == 0 && $dy == 0)) {
+                    if ($this->canSeeOccupied($x1, $y1, $dx, $dy, $seatLayout)) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
     public function countOccupied()
     {
         $count = 0;
@@ -107,14 +121,14 @@ class Day11Part2 implements ProblemInterface
                 $value = $this->getSeat($x, $y, $seatLayout);
                 // If a seat is empty (L) and there are no visible occupied
                 // seats adjacent to it, the seat becomes occupied.
-                if ($value == 'L' && $this->visibleOccupiedCount($x, $y, $seatLayout) == 0) {
+                if ($value == 'L' && $this->noVisibleOccupied($x, $y, $seatLayout)) {
                     $this->putSeat($x, $y, '#');
                     $isChanged = true;
                 }
                 // Also, people seem to be more tolerant than you expected: it now takes five or
                 // more visible occupied seats for an occupied seat to become empty (rather than
                 // four or more from the previous rules)
-                if ($value == '#' && $this->visibleOccupiedCount($x, $y, $seatLayout) >= 5) {
+                if ($value == '#' && $this->moreThanFourVisibleOccupied($x, $y, $seatLayout)) {
                     $this->putSeat($x, $y, 'L');
                     $isChanged = true;
                 }

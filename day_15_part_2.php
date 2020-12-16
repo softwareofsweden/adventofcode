@@ -13,19 +13,20 @@ class Day15Part2 implements ProblemInterface
     {
         $startingNumbers = include 'day_15_input.php';
         $spokenNumbers = [];
+        $spokenNumbers2 = [];
         for ($i = 0; $i < count($startingNumbers); $i++) {
-            $spokenNumbers[$startingNumbers[$i]][0] = $i;
+            $spokenNumbers[$startingNumbers[$i]] = $i;
+            $spokenNumbers2[$startingNumbers[$i]] = 0;
         }
         $lastSpoken = $startingNumbers[count($startingNumbers)-1];
         for ($i = count($startingNumbers); $i < 30000000; $i++) {
-            $lastSpoken = count($spokenNumbers[$lastSpoken]) == 1 ? 0 : $spokenNumbers[$lastSpoken][0] - $spokenNumbers[$lastSpoken][1];
+            $lastSpoken = $spokenNumbers2[$lastSpoken];
             if (!isset($spokenNumbers[$lastSpoken])) {
-                $spokenNumbers[$lastSpoken][0] = $i;
+                $spokenNumbers[$lastSpoken] = $i;
+                $spokenNumbers2[$lastSpoken] = 0;
             } else {
-                $spokenNumbers[$lastSpoken] = [
-                    $i,
-                    $spokenNumbers[$lastSpoken][0]
-                ];
+                $spokenNumbers2[$lastSpoken] = $i - $spokenNumbers[$lastSpoken];
+                $spokenNumbers[$lastSpoken] = $i;
             }
         }
         return $lastSpoken;
