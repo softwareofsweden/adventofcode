@@ -18,9 +18,9 @@ echo "---------------------------------------------------------------------\n";
 $startAll = microtime(true);
 foreach ($problems as $problem) {
 
-    if (get_class($problem) != 'Day15Part2') {
-        //continue;
-    }
+    /*if (get_class($problem) != 'Day16Part1' && get_class($problem) != 'Day16Part2') {
+        continue;
+    }*/
 
     $start = microtime(true);
     $answer = $problem->solve();
