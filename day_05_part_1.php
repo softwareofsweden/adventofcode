@@ -11,7 +11,7 @@ class Day5Part1 implements ProblemInterface
 
     public function solve()
     {
-        $boardingPasses = include 'day_5_input.php';
+        $boardingPasses = include 'day_05_input.php';
         $maxSeatId = 0;
         foreach ($boardingPasses as $boardingPass) {
             $row = 0;

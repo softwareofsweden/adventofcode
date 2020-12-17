@@ -4,8 +4,8 @@
 $problems = [];
 for ($day = 1; $day < 25; $day++) {
     for ($part = 1; $part < 3; $part++) {
-        if (file_exists("day_" . $day . "_part_" . $part . ".php")) {
-            include "day_" . $day . "_part_" . $part . ".php";
+        if (file_exists("day_" . str_pad($day, 2, '0', STR_PAD_LEFT) . "_part_" . $part . ".php")) {
+            include "day_" . str_pad($day, 2, '0', STR_PAD_LEFT) . "_part_" . $part . ".php";
             $class = "Day" . $day . "Part" . $part;
             $problems[] = new $class();
         }

@@ -11,7 +11,7 @@ class Day8Part2 implements ProblemInterface
 
     public function solve()
     {
-        $program = include 'day_8_input.php';
+        $program = include 'day_08_input.php';
         foreach (['nop', 'jmp'] as $newOpcode) {
             for ($i = 0; $i < count($program); $i++) {
                 $opcode = substr($program[$i], 0, strpos($program[$i], ' '));

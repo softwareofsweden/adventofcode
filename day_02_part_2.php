@@ -16,7 +16,7 @@ class Day2Part2 implements ProblemInterface
         // and so on. (Be careful; Toboggan Corporate Policies have no concept of "index zero"!) Exactly one of these positions must contain
         // the given letter. Other occurrences of the letter are irrelevant for the purposes of policy enforcement.
         //
-        $passwords = include 'day_2_input.php';
+        $passwords = include 'day_02_input.php';
         $nbrValid = 0;
         for ($i = 0; $i < count($passwords); $i++) {
             $parts = explode(' ', $passwords[$i]);

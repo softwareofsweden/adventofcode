@@ -15,7 +15,7 @@ class Day3Part1 implements ProblemInterface
         // Starting at the top-left corner of your map and following a slope of right 3
         // and down 1, how many trees would you encounter?
         //
-        $map = include 'day_3_input.php';
+        $map = include 'day_03_input.php';
         $x = 0;
         $nbrTrees = 0;
         $mapWidth = 31;

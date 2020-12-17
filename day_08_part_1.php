@@ -11,7 +11,7 @@ class Day8Part1 implements ProblemInterface
 
     public function solve()
     {
-        $program = include 'day_8_input.php';
+        $program = include 'day_08_input.php';
         return $this->runProgram($program);
     }
 

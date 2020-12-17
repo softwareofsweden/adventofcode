@@ -11,7 +11,7 @@ class Day9Part1 implements ProblemInterface
 
     public function solve()
     {
-        $numbers = include 'day_9_input.php';
+        $numbers = include 'day_09_input.php';
         for ($i = 25; $i < count($numbers); $i++)
         {
             $isSum = false;

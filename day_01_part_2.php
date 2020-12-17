@@ -14,7 +14,7 @@ class Day1Part2 implements ProblemInterface
         //
         // What is the product of the three entries that sum to 2020?
         //
-        $input = include 'day_1_input.php';
+        $input = include 'day_01_input.php';
         sort($input);
         $max = count($input);
         for ($i = 0; $i < $max; $i++) {

@@ -11,7 +11,7 @@ class Day5Part2 implements ProblemInterface
 
     public function solve()
     {
-        $boardingPasses = include 'day_5_input.php';
+        $boardingPasses = include 'day_05_input.php';
         $takenSeats = [];
         foreach ($boardingPasses as $boardingPass) {
             $row = 0;

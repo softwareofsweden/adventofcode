@@ -11,7 +11,7 @@ class Day6Part1 implements ProblemInterface
 
     public function solve()
     {
-        $rows = include 'day_6_input.php';
+        $rows = include 'day_06_input.php';
         $totalCount = 0;
         $questions = "abcdefghijklmnopqrstuvwxyz";
         for ($i = 0; $i < count($rows); $i++) {

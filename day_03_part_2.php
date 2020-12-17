@@ -15,7 +15,7 @@ class Day3Part2 implements ProblemInterface
         // Time to check the rest of the slopes - you need to minimize the probability of a sudden arboreal stop, after all.
         // What do you get if you multiply together the number of trees encountered on each of the listed slopes?
         //
-        $map = include 'day_3_input.php';
+        $map = include 'day_03_input.php';
         $nbrTreesArr = [];
         $mapWidth = 31;
         $slopes =

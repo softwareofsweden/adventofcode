@@ -14,7 +14,7 @@ class Day1Part1 implements ProblemInterface
         //
         // Find the two entries that sum to 2020 and then multiply those two numbers together
         //
-        $input = include 'day_1_input.php';
+        $input = include 'day_01_input.php';
         $max = count($input);
         for ($i = 0; $i < $max; $i++) {
             for ($j = $i; $j < $max; $j++) {

@@ -17,7 +17,7 @@ class Day2Part1 implements ProblemInterface
         // valid. For example, 1-3 a means that the password must contain a at least 1 time and at
         // most 3 times.
         //
-        $passwords = include 'day_2_input.php';
+        $passwords = include 'day_02_input.php';
         $nbrValid = 0;
         for ($i = 0; $i < count($passwords); $i++) {
             $parts = explode(' ', $passwords[$i]);

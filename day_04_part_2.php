@@ -57,7 +57,7 @@ class Day4Part2 implements ProblemInterface
 
     public function solve()
     {
-        $rows = include 'day_4_input.php';
+        $rows = include 'day_04_input.php';
         array_push($rows, "");
         $requiredFields = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'];
         $nbrValid = 0;

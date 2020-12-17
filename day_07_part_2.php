@@ -21,7 +21,7 @@ class Day7Part2 implements ProblemInterface
 
     public function solve()
     {
-        $input = include 'day_7_input.php';
+        $input = include 'day_07_input.php';
         $find = 'shiny gold bag';
         $bags = [];
         for ($i = 0; $i < count($input); $i++) {
